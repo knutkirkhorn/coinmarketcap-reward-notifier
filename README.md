@@ -1,7 +1,7 @@
 # coinmarketcap-reward-notifier
 > Get notified when new rewards are available on [CoinMarketCap](https://coinmarketcap.com/)
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/knutkirkhorn/coinmarketcap-reward-notifier)](https://hub.docker.com/r/knutkirkhorn/coinmarketcap-reward-notifier) [![Docker Image Size](https://badgen.net/docker/size/knutkirkhorn/coinmarketcap-reward-notifier)](https://hub.docker.com/r/knutkirkhorn/coinmarketcap-reward-notifier)
+[![Discord server](https://img.shields.io/discord/891699682961686549?color=5865F2&logo=discord&logoColor=white)](https://discord.gg/CBtDPB5eFE) [![Docker Pulls](https://img.shields.io/docker/pulls/knutkirkhorn/coinmarketcap-reward-notifier)](https://hub.docker.com/r/knutkirkhorn/coinmarketcap-reward-notifier) [![Docker Image Size](https://badgen.net/docker/size/knutkirkhorn/coinmarketcap-reward-notifier)](https://hub.docker.com/r/knutkirkhorn/coinmarketcap-reward-notifier)
 
 Notifies on Discord if new rewards are available on [CoinMarketCap](https://coinmarketcap.com/). Fetches newest rewards from their [API](https://api.coinmarketcap.com/shop/v3/product/list). It notifies to a Discord channel using [Discord Webhooks](https://discord.com/developers/docs/resources/webhook).
 
@@ -10,6 +10,9 @@ Notifies on Discord if new rewards are available on [CoinMarketCap](https://coin
 </div>
 
 ## Usage
+### Join my Discord server
+You can follow notifications in my [notifier server on Discord](https://discord.gg/CBtDPB5eFE) if you don't want to set this up yourself. It is possible to forward the messages from this server to your own.
+
 ### Within a Docker container
 #### From Docker Hub Image
 This will pull the image from [Docker Hub](https://hub.docker.com/) and run the image with the provided configuration for web hooks as below. It's required to provide account addresses, names and the Webhook URL or both the Webhook ID and token.
