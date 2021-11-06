@@ -20,11 +20,11 @@ function createDynamicDiscordTimestamp(date) {
 }
 
 async function notifyNewReward(reward) {
-    let avaiableText = 'Now';
+    let availableText = 'Now';
 
     // Check if reward is scheduled to be released at a later time
     if (reward.saleStartTime && new Date() < new Date(reward.saleStartTime)) {
-        avaiableText = createDynamicDiscordTimestamp(new Date(reward.saleStartTime));
+        availableText = createDynamicDiscordTimestamp(new Date(reward.saleStartTime));
     }
 
     const embedMessage = new MessageEmbed()
@@ -32,7 +32,7 @@ async function notifyNewReward(reward) {
         .setThumbnail(new URL(reward.imageUrl))
         .addField('Name', reward.name)
         .addField('Price', `${reward.price}`)
-        .addField('Available', avaiableText);
+        .addField('Available', availableText);
 
     await webhookClient.send({
         username: webhookUsername,
