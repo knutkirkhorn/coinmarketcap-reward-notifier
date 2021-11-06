@@ -1,4 +1,4 @@
-import {MessageEmbed, WebhookClient} from 'discord.js';
+import {Formatters, MessageEmbed, WebhookClient} from 'discord.js';
 // eslint-disable-next-line import/no-unresolved
 import {setTimeout} from 'timers/promises';
 import {fetchNewRewards, getLatestRewardCreationDate} from './coinmarketcap.js';
@@ -14,17 +14,12 @@ if (!(discordWebhookUrl || (discordWebhookId !== '' && discordWebhookToken !== '
 const webhookClient = discordWebhookUrl ? new WebhookClient({url: discordWebhookUrl}) : new WebhookClient({id: discordWebhookId, token: discordWebhookToken});
 const webhookUsername = 'CoinMarketCap Reward Notifier';
 
-function createDynamicDiscordTimestamp(date) {
-    const unixTime = Math.round(date.getTime() / 1000);
-    return `<t:${unixTime}:R>`;
-}
-
 async function notifyNewReward(reward) {
     let availableText = 'Now';
 
     // Check if reward is scheduled to be released at a later time
     if (reward.saleStartTime && new Date() < new Date(reward.saleStartTime)) {
-        availableText = createDynamicDiscordTimestamp(new Date(reward.saleStartTime));
+        availableText = Formatters.time(new Date(reward.saleStartTime), Formatters.TimestampStyles.RelativeTime);
     }
 
     const embedMessage = new MessageEmbed()
