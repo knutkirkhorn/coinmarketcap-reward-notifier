@@ -51,7 +51,7 @@ Provide these with the docker run command or store these in a `.env` file.
 - `DISCORD_WEBHOOK_TOKEN`
     - Token for the Discord Webhook
 - `WAIT_TIMEOUT` ***(optional)***
-    - The time interval in milliseconds between each check of character staminas.
+    - The time interval in milliseconds between each check of CoinMarketCap rewards.
     - Default: `3600000` (60 minutes)
 
 ## License
