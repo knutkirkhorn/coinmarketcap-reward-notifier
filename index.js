@@ -1,5 +1,4 @@
 import {Formatters, MessageEmbed, WebhookClient} from 'discord.js';
-// eslint-disable-next-line import/no-unresolved
 import {setTimeout} from 'timers/promises';
 import {fetchNewRewards, getLatestRewardCreationDate} from './coinmarketcap.js';
 import config from './config.js';
@@ -35,27 +34,22 @@ async function notifyNewReward(reward) {
     });
 }
 
-(async () => {
-    let latestRewardCreationDate = await getLatestRewardCreationDate();
+let latestRewardCreationDate = await getLatestRewardCreationDate();
 
-    // Make it run forever
-    while (true) {
-        try {
-            console.log('Checking for rewards at:', new Date());
+// Make it run forever
+while (true) {
+    try {
+        console.log('Checking for rewards at:', new Date());
 
-            // eslint-disable-next-line no-await-in-loop
-            const {latestRewardCreationDate: latestCreationDate, newRewards} = await fetchNewRewards(latestRewardCreationDate);
-            latestRewardCreationDate = latestCreationDate;
+        const {latestRewardCreationDate: latestCreationDate, newRewards} = await fetchNewRewards(latestRewardCreationDate);
+        latestRewardCreationDate = latestCreationDate;
 
-            for (let i = 0; i < newRewards.length; i++) {
-                // eslint-disable-next-line no-await-in-loop
-                await notifyNewReward(newRewards[i]);
-            }
-        } catch (error) {
-            console.log(error);
-        } finally {
-            // eslint-disable-next-line no-await-in-loop
-            await setTimeout(config.waitTimeout);
+        for (let i = 0; i < newRewards.length; i++) {
+            await notifyNewReward(newRewards[i]);
         }
+    } catch (error) {
+        console.log(error);
+    } finally {
+        await setTimeout(config.waitTimeout);
     }
-})();
+}

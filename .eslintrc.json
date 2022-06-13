@@ -8,7 +8,7 @@
         "airbnb-base"
     ],
     "parserOptions": {
-        "ecmaVersion": 2021,
+        "ecmaVersion": 2022,
         "sourceType": "module"
     },
     "rules": {
@@ -22,6 +22,7 @@
         "import/extensions": ["error", "always"],
         "no-console": "off",
         "max-len": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "no-await-in-loop": "off"
     }
 }
