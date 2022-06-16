@@ -1,16 +1,10 @@
-import {Formatters, MessageEmbed, WebhookClient} from 'discord.js';
+import discordWebhookWrapper from 'discord-webhook-wrapper';
+import {Formatters, MessageEmbed} from 'discord.js';
 import {setTimeout} from 'timers/promises';
 import {fetchNewRewards, getLatestRewardCreationDate} from './coinmarketcap.js';
 import config from './config.js';
 
-const {discordWebhookUrl, discordWebhookId, discordWebhookToken} = config;
-
-// Check if either Discord Webhook URL or Discord Webhook ID and token is provided
-if (!(discordWebhookUrl || (discordWebhookId !== '' && discordWebhookToken !== ''))) {
-    throw new Error('You need to specify either Discord Webhook URL or both Discord Webhook ID and token!');
-}
-
-const webhookClient = discordWebhookUrl ? new WebhookClient({url: discordWebhookUrl}) : new WebhookClient({id: discordWebhookId, token: discordWebhookToken});
+const webhookClient = discordWebhookWrapper(config);
 const webhookUsername = 'CoinMarketCap Reward Notifier';
 
 async function notifyNewReward(reward) {
