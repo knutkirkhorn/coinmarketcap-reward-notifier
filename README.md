@@ -24,27 +24,27 @@ This will pull the image from [Docker Hub](https://hub.docker.com/) and run the 
 
 ```sh
 # Providing a Discord Webhook URL
-$ docker run -d -e DISCORD_WEBHOOK_URL=<URL_HERE> knutkirkhorn/coinmarketcap-reward-notifier
+docker run -d -e DISCORD_WEBHOOK_URL=<URL_HERE> knutkirkhorn/coinmarketcap-reward-notifier
 ```
 
 #### From source code
 
 ```sh
 # Build container from source
-$ docker build -t coinmarketcap-reward-notifier .
+docker build -t coinmarketcap-reward-notifier .
 
 # Providing a Discord Webhook URL
-$ docker run -d -e DISCORD_WEBHOOK_URL=<URL_HERE> coinmarketcap-reward-notifier
+docker run -d -e DISCORD_WEBHOOK_URL=<URL_HERE> coinmarketcap-reward-notifier
 ```
 
 ### Outside of a Docker container
 
 ```sh
 # Install
-$ npm install
+npm install
 
 # Run
-$ npm start
+npm start
 ```
 
 ### Environment variables
