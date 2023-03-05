@@ -1,47 +1,48 @@
 {
-  "name": "coinmarketcap-reward-notifier",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Get notified when new rewards are available on CoinMarketCap",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/knutkirkhorn/coinmarketcap-reward-notifier.git"
-  },
-  "keywords": [
-    "coinmarketcap",
-    "cmc",
-    "crypto",
-    "cryptocurrency",
-    "reward",
-    "notifier",
-    "docker"
-  ],
-  "author": "Knut Kirkhorn",
-  "type": "module",
-  "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/knutkirkhorn/coinmarketcap-reward-notifier/issues"
-  },
-  "homepage": "https://github.com/knutkirkhorn/coinmarketcap-reward-notifier#readme",
-  "dependencies": {
-    "discord-webhook-wrapper": "^1.0.0",
-    "discord.js": "^13.8.0",
-    "dotenv": "^16.0.1",
-    "got": "^12.1.0",
-    "package-user-agent": "^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.17.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
-  }
+	"name": "coinmarketcap-reward-notifier",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Get notified when new rewards are available on CoinMarketCap",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/knutkirkhorn/coinmarketcap-reward-notifier.git"
+	},
+	"keywords": [
+		"coinmarketcap",
+		"cmc",
+		"crypto",
+		"cryptocurrency",
+		"reward",
+		"notifier",
+		"docker"
+	],
+	"author": "Knut Kirkhorn",
+	"type": "module",
+	"engines": {
+		"node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/knutkirkhorn/coinmarketcap-reward-notifier/issues"
+	},
+	"homepage": "https://github.com/knutkirkhorn/coinmarketcap-reward-notifier#readme",
+	"dependencies": {
+		"discord-webhook-wrapper": "^1.0.2",
+		"discord.js": "^14.7.1",
+		"dotenv": "^16.0.3",
+		"got": "^12.6.0",
+		"package-user-agent": "^1.0.1"
+	},
+	"devDependencies": {
+		"eslint": "^8.35.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-unicorn": "^46.0.0"
+	}
 }
