@@ -26,6 +26,7 @@
 		"no-console": "off",
 		"max-len": "off",
 		"no-plusplus": "off",
-		"no-await-in-loop": "off"
+		"no-await-in-loop": "off",
+		"import/no-unresolved": "off"
 	}
 }
